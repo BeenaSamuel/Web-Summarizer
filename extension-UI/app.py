@@ -22,7 +22,6 @@ def summarize():
         results = soup.find_all(['h1', 'p'])
         text = [result.text for result in results]
         article = ' '.join(text)
-
        
         res = summarizer(article, max_length=120, min_length=30, do_sample=False)
         summary = ' '.join([summ['summary_text'] for summ in res])
